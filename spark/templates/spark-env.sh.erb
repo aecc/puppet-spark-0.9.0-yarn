@@ -1,0 +1,21 @@
+#SPARK_JAVA_OPTS+=" -Dspark.local.dir=/data0/spark,/data1/spark"
+#SPARK_JAVA_OPTS+="-XX:MaxPermSize=512m"
+#SPARK_JAVA_OPTS+="-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9012 -Dcom.sun.management.jmxremote.local.only=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
+#export SPARK_JAVA_OPTS
+
+#SPARK_JAVA_OPTS+="-Djava.awt.headless=true"
+#SPARK_JAVA_OPTS+="-Dlog4j.configuration=/opt/spark/conf/log4j.properties"
+#export SPARK_JAVA_OPTS
+#export SPARK_MEM=<%= @worker_mem %>
+#export SPARK_DAEMON_MEMORY=1g
+
+export SCALA_HOME=<%= @scala_install_dir %>
+export SPARK_LIBRARY_PATH=<%= @hadoop_library %>
+export HADOOP_CONF_DIR=<%= @hadoop_conf_dir %>
+export YARN_CONF_DIR=<%= @yarn_conf_dir %>
+export SPARK_HOME=<%= @spark_install_dir %>
+export HADOOP_HOME=<%= @hadoop_home %>
+export SPARK_JAR=<%= @spark_jar %>
+     
+# Set a high ulimit for large shuffles 
+#ulimit -n 1000000 
